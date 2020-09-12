@@ -46,4 +46,16 @@ public class MovieRest {
         MovieDto dto = FACADE.getMovieByID(id);
         return GSON.toJson(dto);
     }
+
+    @GET
+    @Path("/dummy")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String dummy() {
+        Movie movei = new Movie("Someone", "Ring of the lord", 2001);
+        Movie Movie1 = new Movie("James Camaron", "Tiatanic", 1999);
+        FACADE.addMovie(movei);
+        
+        return "done";
+    }
+
 }
